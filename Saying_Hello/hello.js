@@ -3,6 +3,6 @@
 const prompt = require('prompt-sync')();
 
 let username = prompt('What is your name? ')
-let greeting = (`Hello, ${username}, nice to meet you!`)
+let greeting = `Hello, ${username}, nice to meet you!`
 
 console.log(greeting);
