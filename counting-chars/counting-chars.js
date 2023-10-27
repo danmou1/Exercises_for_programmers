@@ -11,11 +11,12 @@ rl.prompt();
 rl.on('line', (answer) => {
     if (answer.trim()) {
         console.log(`The string '${answer}' contains ${answer.length} characters.`);
-        return
+        return;
     } 
     else {
         console.log(`Invalid string.`);
     }
+    
     rl.prompt();
 });
 
