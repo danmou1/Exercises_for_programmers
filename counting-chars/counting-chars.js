@@ -1,15 +1,36 @@
 //inputs a string and then counts the characters of said string
+const readline = require('node:readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    prompt: 'Insert a string for length evaluation: '
+});
 
-const prompt = require("prompt-sync")()
+rl.prompt();
 
-let userInput = prompt('Insert the input string: ')
-while (userInput === null || userInput.length === 0){
-    userInput = prompt('Invalid string, please enter a proper string: ')
-}
+rl.on('line', (answer) =>{
+    if (answer.trim()) {
+        console.log(`The string '${answer}' contains ${answer.length} characters.`);
+        return
+    } 
+    else {
+        console.log(`Invalid string.`);
+    }
+    rl.prompt();
+});
 
-console.log(`${userInput} has ${userInput.length} characters.`);
-/*following is interchangeable code, in case the snippet above looks off
+/*
+Why does the following snippet not check if answer is falsey, and always goes for the default switch?
 
-let output = `${userInput} has ${userInput.lenght} characters.`
-console.log(output);
+rl.on('line', (answer) => {
+    switch (answer.trim()) {
+        case !answer:
+            console.log('Invalid string.');
+            break;
+        default:
+            console.log(`${answer} contains ${answer.length} characters.`);
+            return;  
+    }
+    rl.prompt();
+});
 */

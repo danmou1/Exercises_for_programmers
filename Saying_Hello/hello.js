@@ -1,8 +1,10 @@
 // for this exercise, it was required to keep input, concatenation and output separate.
-// prompt-sync is required to emulate the window object in node, so that the code runs in the terminal.
-const prompt = require('prompt-sync')();
+const readline = require('node:readline');
 
-let username = prompt('What is your name? ')
-let greeting = `Hello, ${username}, nice to meet you!`
+const rl = readline.createInterface(process.stdin, process.stdout);
 
-console.log(greeting);
+rl.question('What is your name? ', (answer) => {
+    console.log(`Hello, ${answer}, nice to meet you!`);
+
+    rl.close();
+});
