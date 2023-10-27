@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 
 rl.prompt();
 
-rl.on('line', (answer) =>{
+rl.on('line', (answer) => {
     if (answer.trim()) {
         console.log(`The string '${answer}' contains ${answer.length} characters.`);
         return
@@ -24,12 +24,12 @@ Why does the following snippet not check if answer is falsey, and always goes fo
 
 rl.on('line', (answer) => {
     switch (answer.trim()) {
-        case !answer:
+        case !!answer:
+            console.log(`${answer} contains ${answer.length} characters.`);
+            break;  
+        default:
             console.log('Invalid string.');
             break;
-        default:
-            console.log(`${answer} contains ${answer.length} characters.`);
-            return;  
     }
     rl.prompt();
 });
