@@ -10,7 +10,8 @@ rl.prompt();
 
 rl.on('line', (answer) => {
     if (answer.trim()) {
-        console.log(`The string '${answer}' contains ${answer.length} characters.`);
+        console.log(`The string ${answer} contains ${answer.length} characters.`);
+        rl.close();
         return;
     } 
     else {
