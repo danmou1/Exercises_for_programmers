@@ -7,3 +7,4 @@ This repo contains my answers for this book, using Node.
 **Input, Processing and Output**
 - Exercise 1: Saying Hello;
 - Exercise 2: Counting the number of characters.
+- Exercise 3: Counting the number of characters.
