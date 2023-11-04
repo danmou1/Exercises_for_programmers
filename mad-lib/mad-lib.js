@@ -21,8 +21,10 @@ async function madLib() {
     const verb = await askQuestion(rl, 'Enter a verb: ');
     const adjective = await askQuestion(rl, 'Enter an adjective: ');
     const adverb = await askQuestion(rl, 'Enter an adverb: ');
+    const adverb2 = await askQuestion(rl, 'Now, for the second sentence, enter an adverb: ');
+    const adjective2 = await askQuestion(rl, 'Enter an adjective: ');
 
-    console.log(`Do you ${adjective} ${noun} ${verb} ${adverb}?`);
+    console.log(`Did you ${adjective} ${noun} ${verb} ${adverb}? That is ${adverb2} ${adjective2}!`);
     rl.close();
 }
 
