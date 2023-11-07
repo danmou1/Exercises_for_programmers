@@ -9,3 +9,6 @@ This repo contains my answers for this book, using Node.
 - Exercise 2: Counting the number of characters.
 - Exercise 3: Printing quotes.
 - Exercise 4: Mad Lib.
+
+**Calculations**
+- Exercise 7. Area of a Rectangular room.
