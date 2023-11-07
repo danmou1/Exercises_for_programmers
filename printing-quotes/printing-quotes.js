@@ -1,8 +1,6 @@
 //the exercise requires the use of string concatenation, without interpolating
 //a single output statement should be used to produce the output.
-
-const { get } = require('node:http');
-const readline = require('node:readline');
+const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
