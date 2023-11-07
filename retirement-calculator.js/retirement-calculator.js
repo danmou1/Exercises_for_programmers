@@ -1,7 +1,6 @@
 //get unix timestamp
 //if the program returns a negative number, assign the correct output
 
-const { resolve } = require('path');
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
