@@ -13,4 +13,4 @@ This repo contains my answers for this book, using Node.
 - Exercise 6: Retirement Calculator.
 
 **Calculations**
-- Exercise 7. Area of a Rectangular room.
+- Exercise 7: Area of a Rectangular room.
