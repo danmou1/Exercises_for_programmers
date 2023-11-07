@@ -9,6 +9,9 @@
     - 6/11/23 21:50/23:40 – Exercício 6 completo com código reausado dos exercícios anteriores. — Desafio completo.
 # Exercício 7
 
-    - 7/11/23:
+    - 7/11/23
         08:30/9:20 – Exercício 7 completo — Desafio pendente.
         9:20/10:20 – Somente um desafio pendente, já que os restantes foram completos.
+
+# Exercício 8
+    - 7/11/23 10:30 - 11:30 - Exercício completo.
