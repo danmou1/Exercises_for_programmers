@@ -6,8 +6,11 @@ This repo contains my answers for this book, using Node.
 
 **Input, Processing and Output**
 - Exercise 1: Saying Hello.
-- Exercise 2: Counting the Number of Characters.
-- Exercise 3: Printing Quotes.
+- Exercise 2: Counting the number of characters.
+- Exercise 3: Printing quotes.
 - Exercise 4: Mad Lib.
 - Exercise 5: Simple Math.
 - Exercise 6: Retirement Calculator.
+
+**Calculations**
+- Exercise 7. Area of a Rectangular room.
