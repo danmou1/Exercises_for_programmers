@@ -1,7 +1,6 @@
 //calculations must be separate from output
 //conversion value variable must be a constant
 //inputs must be numeric
-const { features } = require('process');
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
