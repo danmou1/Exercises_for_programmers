@@ -4,6 +4,9 @@
 # Exercício 5
 
     - 6/11/23 20:00/21:30 – Exercício 5 completo com async/await (não entendo completamente o conceito de promise) — Desafio pendente.
+# Exercício 6
+
+    - 6/11/23 21:50/23:40 – Exercício 6 completo com código reausado dos exercícios anteriores. — Desafio completo.
 # Exercício 7
 
     - 7/11/23:
