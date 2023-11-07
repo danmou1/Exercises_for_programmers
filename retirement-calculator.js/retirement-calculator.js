@@ -27,9 +27,12 @@ function checkInput(answer, resolve) {
 async function calculator() {
     const age = await askQuestion(rl, 'What is your current age? ');
     const retireAge = await askQuestion(rl, 'At what age would you like to retire? ');
+    const year = (new Date()).getFullYear();
 
     if (age < retireAge) {
-        console.log(`You will be able to retire in ${retireAge - age} year(s).`);
+        console.log(
+            `You will be able to retire in ${retireAge - age} year(s).   \n` +
+            `It's ${year}, so you can retire in ${year + (retireAge - age)}.`);
     } else if (age === retireAge) {
         console.log('You will be able to retire in less than a year.')
     } else {
