@@ -31,11 +31,11 @@ async function calculator() {
     const x = await askQuestion(rl, 'Enter the first number: ');
     const y = await askQuestion(rl, 'Enter the second number: ');
 
-    console.log(`
-        ${x} + ${y} = ${x+y}    \n
-        ${x} - ${y} = ${x-y}    \n
-        ${x} * ${y} = ${x*y}    \n
-        ${x} / ${y} = ${x/y}    `);
+    console.log(
+        `${x} + ${y} = ${x+y}    \n` +
+        `${x} - ${y} = ${x-y}    \n` +
+        `${x} * ${y} = ${x*y}    \n` +
+        `${x} / ${y} = ${x/y}    `);
 
         rl.close();
 };
