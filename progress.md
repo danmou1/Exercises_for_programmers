@@ -12,6 +12,7 @@
     - 7/11/23
         08:30/9:20 – Exercício 7 completo — Desafio pendente.
         9:20/10:20 – Somente um desafio pendente, já que os restantes foram completos.
+    - 8/11/23 8:30 – Substituição de if-else por switch-case.
 
 # Exercício 8
     - 7/11/23 10:30 - 11:30 - Exercício completo.
