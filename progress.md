@@ -15,3 +15,6 @@
 
 # Exercício 8
     - 7/11/23 10:30 - 11:30 - Exercício completo.
+
+# Exercício 9
+    - 8/11/23 10:20/10:50 – Exercício completo. — Desafio pendente. 
