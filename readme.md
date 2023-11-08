@@ -14,3 +14,4 @@ This repo contains my answers for this book, using Node.
 
 **Calculations**
 - Exercise 7: Area of a Rectangular room.
+- Exercise 8: Pizza Party.
