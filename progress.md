@@ -15,4 +15,5 @@
     - 8/11/23 8:30 – Substituição de if-else por switch-case.
 
 # Exercício 8
-    - 7/11/23 10:30 - 11:30 - Exercício completo.
+    - 7/11/23 10:30/11:30 - Exercício completo.
+    - 8/11/23 8:30/10:15 - Tentativa de implementação de um prompt yes/no, sem sucesso. 
