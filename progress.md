@@ -14,4 +14,5 @@
         9:20/10:20 – Somente um desafio pendente, já que os restantes foram completos.
 
 # Exercício 8
-    - 7/11/23 10:30 - 11:30 - Exercício completo.
+    - 7/11/23 10:30/11:30 - Exercício completo.
+    - 8/11/23 8:30/10:15 - Tentativa de implementação de um prompt yes/no, sem sucesso. 
