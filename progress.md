@@ -23,3 +23,6 @@
 
     - 8/11/23 10:20/10:50 – Exercício completo. — Desafio pendente. 
 
+# Exercício 10
+
+    - 8/11/23 10:50/11:30 – Estrutura completa, falta achar uma forma de como lidar com valores monetários.
