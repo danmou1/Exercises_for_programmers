@@ -1,7 +1,6 @@
 //get unix timestamp
 //if the program returns a negative number, assign the correct output
 
-const { resolve } = require('path');
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -16,11 +15,12 @@ function askQuestion(rl, prompt) {
 
 function checkInput(answer, resolve) {
     const number = parseFloat(answer);
-    if(isNaN(answer) || answer <= 0) {
+
+    if(isNaN(number) || number <= 0) {
         console.log('Invalid age, please enter a real number.');
         askQuestion(rl, 'Try again: ').then(resolve);
     } else {
-        resolve(answer);
+        resolve(number);
     }
 };
 
