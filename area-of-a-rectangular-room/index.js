@@ -16,18 +16,22 @@ function askUnit(rl, prompt){
 function checkUnit(answer, resolve) {
     let primaryUnit, oppositeUnit;
 
-    if(answer.toLowerCase() === 'n') {
-        primaryUnit = 'ft';
-        oppositeUnit = 'm';
-        verboseUnit = 'feet';
-    } else if (answer.toLowerCase() === 'y') {
-        primaryUnit = 'm';
-        oppositeUnit = 'ft';
-        verboseUnit = 'meters';
-    } else {
-        primaryUnit, oppositeUnit = null;
+    switch (answer.toLowerCase()) {
+        case 'y':
+            primaryUnit = 'm';
+            oppositeUnit = 'ft';
+            verboseUnit = 'meters';
+            break;
+        case 'n':
+            primaryUnit = 'ft';
+            oppositeUnit = 'm';
+            verboseUnit = 'feet';
+            break;
+        default:
+            primaryUnit, oppositeUnit = null;
+            break;
     }
-
+    
     resolve({primaryUnit, oppositeUnit, verboseUnit});
 };
 
