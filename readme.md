@@ -15,3 +15,4 @@ This repo contains my answers for this book, using Javascript.
 **Calculations**
 - Exercise 7: Area of a Rectangular room.
 - Exercise 8: Pizza Party.
+- Exercise 10: Self Checkout.
