@@ -13,6 +13,7 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 6: Retirement Calculator.
 
 **Calculations**
-- Exercise 7: Area of a Rectangular room.
+- Exercise 7: Area of a Rectangular Room.
 - Exercise 8: Pizza Party.
+- Exercise 9: Paint Calculator.
 - Exercise 10: Self Checkout.
