@@ -17,4 +17,8 @@
     - 7/11/23 10:30 - 11:30 - Exercício completo.
 
 # Exercício 9
-    - 8/11/23 10:20/10:50 – Exercício completo. — Desafio pendente. 
+    - 8/11/23 10:20/10:50 – Exercício completo. — Desafio pendente.
+
+# Exercício 10
+    - 8/11/23 10:50/11:30 – Estrutura completa, falta achar uma forma de como lidar com valores monetários.
+    - 9/11/23 8:30/11:30 – Exercício completo (Interrompido frequentemente, continuar mais tarde).
