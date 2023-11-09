@@ -2,7 +2,7 @@
 
 [Buy Bryan Hogan's book here.](https://www.amazon.com.br/Exercises-Programmers-Brian-Hogan/dp/1680501224)
 
-This repo contains my answers for this book, using Node.
+This repo contains my answers for this book, using Javascript.
 
 **Input, Processing and Output**
 - Exercise 1: Saying Hello.
@@ -13,6 +13,6 @@ This repo contains my answers for this book, using Node.
 - Exercise 6: Retirement Calculator.
 
 **Calculations**
-- Exercise 7. Area of a Rectangular room.
+- Exercise 7: Area of a Rectangular room.
 - Exercise 8: Pizza Party.
 - Exercise 10: Self Checkout.
