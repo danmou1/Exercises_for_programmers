@@ -21,3 +21,4 @@
 
 # Exercício 10
     - 8/11/23 10:50/11:30 – Estrutura completa, falta achar uma forma de como lidar com valores monetários.
+    - 9/11/23 8:30/11:30 – Exercício completo (Interrompido frequentemente, continuar mais tarde).
