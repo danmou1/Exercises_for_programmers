@@ -19,11 +19,11 @@ EUR_RATE = 1.07
 
 function askValue(rl, prompt) {
     return new Promise((resolve) => {
-        rl.question(prompt, answer => convertIntoMinor(answer, resolve));
+        rl.question(prompt, (answer) => convertIntoMinor(answer, resolve));
     });
 };
 
-function convertIntoMinor(answer) {
+function convertIntoMinor(answer, resolve) {
 
     //splits the string into an array, reverses the array, joins it back into a string
     const str = String(answer).split('').reverse().join('');
@@ -36,7 +36,7 @@ function convertIntoMinor(answer) {
         console.log('Invalid value, please enter a unit greater than 0.');
         askValue(rl, 'Try again: ').then(resolve);
     } else {
-        return({unit, floatPoint}).then(resolve);
+        resolve({unit, floatPoint});
     }
 };
 
@@ -54,7 +54,6 @@ function convertIntoMajor(minorUnit, floatPoint) {
 
 async function currencyConversion() {
     const value = await askValue(rl, 'How many euros are you exchanging? ');
-    const exch_rate = convertIntoMinor(EUR_RATE); 
     const conversion = value.unit * exch_rate.unit / 10 ** exch_rate.floatPoint
 
     console.log(
