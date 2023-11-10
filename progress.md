@@ -16,3 +16,6 @@
 
 # Exercício 8
     - 7/11/23 10:30 - 11:30 - Exercício completo.
+
+# Exercício 11
+    - 10/11/23 18:00 - init exercício
