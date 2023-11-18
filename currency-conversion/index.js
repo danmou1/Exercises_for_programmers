@@ -12,54 +12,33 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-/**
- * This application uses USD as a baseline currency.
- */
-EUR_RATE = 1.07
+const PRECISION = 10000;
 
 function askValue(rl, prompt) {
     return new Promise((resolve) => {
-        rl.question(prompt, (answer) => convertIntoMinor(answer, resolve));
-    });
+        rl.question(prompt, (answer) => checkValue(answer, resolve));
+    })
 };
 
-function convertIntoMinor(answer, resolve) {
-
-    //splits the string into an array, reverses the array, joins it back into a string
-    const str = String(answer).split('').reverse().join('');
-    const floatPoint = str.indexOf('.');
-
-    //ensures that the float becomes an integer by raising its decimal place
-    let unit = parseFloat(answer) * 10 ** floatPoint;
-
-    if (isNaN(unit) || unit <=0) {
-        console.log('Invalid value, please enter a unit greater than 0.');
+function checkValue(answer, resolve) {
+    const unit = parseFloat(answer) * PRECISION;
+    if (isNaN(unit) || unit <= 0) {
+        console.log('Invalid value, please enter a value greater than 0.');
         askValue(rl, 'Try again: ').then(resolve);
     } else {
-        resolve({unit, floatPoint});
+        resolve(unit)
     }
-};
-
-function convertIntoMajor(minorUnit, floatPoint) {
-    let number = String(minorUnit);
-
-    if (minorUnit < 100) {
-        return `0.${minorUnit}`
-    }
-
-    //adds the floating point to the specified value
-    const unit = number.splice(floatPoint, 0, '.');
-    return unit.join('');
 }
 
 async function currencyConversion() {
-    const value = await askValue(rl, 'How many euros are you exchanging? ');
-    const conversion = value.unit * exch_rate.unit / 10 ** exch_rate.floatPoint
+    const value = await askValue(rl, 'How many euros are you exchanging? ');    
+    const exch_rate  = await askValue(rl, 'What is the current exchange rate? ');
 
-    console.log(
-        `value = ${value} /n
-        exch_rate = ${exch_rate} /n
-        conversion = ${conversion}`
+    const conversion = (value * exch_rate) / (PRECISION ** 2) ;
+    console.log( `${value / PRECISION} euros at the exchange rate of ${exch_rate / PRECISION} is ${conversion} dollars. \n` +
+        `value = ${value / PRECISION} \n` +
+        `exch_rate = ${exch_rate / PRECISION} \n` +
+        `conversion = ${conversion}`
     )
     rl.close();
 }
