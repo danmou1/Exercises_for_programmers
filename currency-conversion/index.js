@@ -35,10 +35,7 @@ async function currencyConversion() {
     const exch_rate  = await askValue(rl, 'What is the current exchange rate? ');
 
     const conversion = (value * exch_rate) / (PRECISION ** 2) ;
-    console.log( `${value / PRECISION} euros at the exchange rate of ${exch_rate / PRECISION} is ${conversion} dollars. \n` +
-        `value = ${value / PRECISION} \n` +
-        `exch_rate = ${exch_rate / PRECISION} \n` +
-        `conversion = ${conversion}`
+    console.log( `${value / PRECISION} euros at the exchange rate of ${exch_rate / PRECISION} is ${conversion} dollars.`
     )
     rl.close();
 }
