@@ -19,3 +19,7 @@
 
 # Exercício 11
     - 10/11/23 18:00 - init exercício
+
+# Exercício 12
+
+    - 18/11/23 21:30 - exercicio completo
