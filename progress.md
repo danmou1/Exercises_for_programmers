@@ -48,3 +48,8 @@
 
     - 22/11/23 16:17 - init
         17:18 - completed
+
+# Exercício 19
+
+    -22/11/23 17:18 - init
+        17:33 - completed
