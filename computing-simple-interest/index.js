@@ -31,7 +31,7 @@ async function interestCalc(){
     /**
      * A = P(1+rt)
      * This logic looks cryptic
-     * Basically rounds up fractions of cents up, moving the floating point to the right so that they can be recognized, and then the value is corrected. 
+     * P is counted as cents, rate as a percentage, values are corrected at the end of the logic.
      */
     const total = Math.ceil(principal * (1 + (rate / 100) * years)) / 100;
 
