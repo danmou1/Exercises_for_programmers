@@ -53,3 +53,7 @@
 
     -22/11/23 17:18 - init
         17:33 - completed
+
+# Exercício 20
+
+    - 22/11/23 17:34 - init (luz caiu)
