@@ -43,3 +43,8 @@
 # Exercicio 17
     - 22/11/23 - 00:35 - init
         16:16 - completed
+
+# Exercicio 18
+
+    - 22/11/23 16:17 - init
+        17:18 - completed
