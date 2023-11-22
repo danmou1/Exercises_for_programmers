@@ -22,4 +22,5 @@
 
 # Exercício 12
 
-    - 18/11/23 21:30 - exercicio completo
+    - 18/11/23 21:30 - exercicio pela metade.
+    - 21/11/23 23:22 - exercicio completo.
