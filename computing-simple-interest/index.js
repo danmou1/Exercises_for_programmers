@@ -24,15 +24,16 @@ function checkValue(answer,resolve) {
 };
 
 async function interestCalc(){
-    const principal = await askQuestion(rl, 'Enter the principal: ');
+    const principal = await askQuestion(rl, 'Enter the principal: ') * 100;
     const rate = await askQuestion(rl, 'Enter the interest rate: ');
     const years = await askQuestion(rl, 'Enter the number of years: ');
 
     /**
      * A = P(1+rt)
-     * This looks cryptic
+     * This logic looks cryptic
+     * Basically rounds up fractions of cents up, moving the floating point to the right so that they can be recognized, and then the value is corrected. 
      */
-    const total = principal * (1 + (rate / 100) * years)
+    const total = Math.ceil(principal * (1 + (rate / 100) * years)) / 100;
 
     console.log(`After ${years} years at ${rate}%, the investment will be worth $${total}`);
     rl.close();
