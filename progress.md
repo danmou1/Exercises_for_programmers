@@ -24,3 +24,8 @@
 
     - 18/11/23 21:30 - exercicio pela metade.
     - 21/11/23 23:22 - exercicio completo.
+
+# Exercicio 13
+
+    - 21/11/23 23:22 - init
+        23:43 - completed
