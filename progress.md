@@ -34,3 +34,8 @@
 
     - 21/11/23 23:43 - init
         00:27 - completed
+
+# Exercicio 15
+
+    - 22/11/23 - 00:27 - init
+        00:34 completed
