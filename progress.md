@@ -37,5 +37,5 @@
 
 # Exercicio 16
 
-    - 22/11/23 00:30 - init
+    - 22/11/23 00:35 - init
         - 00:40 - completed
