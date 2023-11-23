@@ -57,3 +57,4 @@
 # Exercício 20
 
     - 22/11/23 17:34 - init (luz caiu)
+    - 23/11/23 14:00 19:00 - in progress
