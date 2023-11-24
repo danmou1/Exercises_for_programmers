@@ -88,3 +88,4 @@
     - 15:09 - completo exercicio 21, sem problemas.
     - 15:10 - init 22
     - 15:45 - 22 completo, sem problemas.
+    - 16:06 - 23 completo, sem problemas exceto código feio
