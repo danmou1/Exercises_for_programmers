@@ -20,19 +20,3 @@ rl.on('line', (answer) => {
     
     rl.prompt();
 });
-
-/*
-Why does the following snippet not check if answer is falsey, and always goes for the default switch?
-
-rl.on('line', (answer) => {
-    switch (answer.trim()) {
-        case !!answer:
-            console.log(`${answer} contains ${answer.length} characters.`);
-            break;  
-        default:
-            console.log('Invalid string.');
-            break;
-    }
-    rl.prompt();
-});
-*/

@@ -1,12 +1,15 @@
 # Exercicio 4
 
     - 3/11/23 20:00/23:00 – Exercício 4 completo com async/await — Desafio pendente.
+
 # Exercício 5
 
     - 6/11/23 20:00/21:30 – Exercício 5 completo com async/await (não entendo completamente o conceito de promise) — Desafio pendente.
+
 # Exercício 6
 
     - 6/11/23 21:50/23:40 – Exercício 6 completo com código reausado dos exercícios anteriores. — Desafio completo.
+    
 # Exercício 7
 
     - 7/11/23
@@ -15,9 +18,23 @@
     - 8/11/23 8:30 – Substituição de if-else por switch-case.
 
 # Exercício 8
+
     - 7/11/23 10:30 - 11:30 - Exercício completo.
+    - 8/11/23 8:30/10:15 – Tentativa de implementação de um prompt yes/no, sem sucesso. 
+
+# Exercício 9
+
+    - 8/11/23 10:20/10:50 – Exercício completo. — Desafio pendente. 
+
+# Exercício 10
+
+    - 8/11/23 10:50/11:30 – Estrutura completa, falta achar uma forma de como lidar com valores monetários.
+    - 9/11/23 8:30/11:30 – Exercício completo (Interrompido frequentemente, continuar mais tarde).
 
 # Exercício 11
+
+    - 10/11/23 18:00 - init exercício
+    - 18/11/23 20:26 - exercicio completo
     - 10/11/23 18:00 - init exercício
 
 # Exercício 12
