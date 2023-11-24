@@ -86,3 +86,5 @@
     - 14:20 - Completo exercício 20.
     - 14:50 - diretórios organizados, conflitos resolvidos, init 21
     - 15:09 - completo exercicio 21, sem problemas.
+    - 15:10 - init 22
+    - 15:45 - 22 completo, sem problemas.
