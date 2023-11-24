@@ -9,7 +9,7 @@
 # Exercício 6
 
     - 6/11/23 21:50/23:40 – Exercício 6 completo com código reausado dos exercícios anteriores. — Desafio completo.
-    
+
 # Exercício 7
 
     - 7/11/23
@@ -20,11 +20,11 @@
 # Exercício 8
 
     - 7/11/23 10:30 - 11:30 - Exercício completo.
-    - 8/11/23 8:30/10:15 – Tentativa de implementação de um prompt yes/no, sem sucesso. 
+    - 8/11/23 8:30/10:15 – Tentativa de implementação de um prompt yes/no, sem sucesso.
 
 # Exercício 9
 
-    - 8/11/23 10:20/10:50 – Exercício completo. — Desafio pendente. 
+    - 8/11/23 10:20/10:50 – Exercício completo. — Desafio pendente.
 
 # Exercício 10
 
@@ -82,4 +82,7 @@
     - 23/11/23 14:00 19:00 - in progress
 
 # 24/11/2023
-    - 13:00/14:20 - Completo exercício 20.
+    - 13:00 - 20 wip
+    - 14:20 - Completo exercício 20.
+    - 14:50 - diretórios organizados, conflitos resolvidos, init 21
+    - 15:09 - completo exercicio 21, sem problemas.
