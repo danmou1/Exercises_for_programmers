@@ -35,3 +35,43 @@
 
     - 10/11/23 18:00 - init exercício
     - 18/11/23 20:26 - exercicio completo
+    - 10/11/23 18:00 - init exercício
+
+# Exercício 12
+
+    - 18/11/23 21:30 - exercicio pela metade.
+    - 21/11/23 23:22 - exercicio completo.
+
+# Exercicio 13
+
+    - 21/11/23 23:22 - init
+        23:43 - completed
+
+# Exercicio 14
+
+    - 21/11/23 23:43 - init
+        00:27 - completed
+
+# Exercicio 15
+
+    - 22/11/23 - 00:27 - init
+        00:34 completed
+
+# Exercicio 17
+    - 22/11/23 - 00:35 - init
+        16:16 - completed
+
+# Exercicio 18
+
+    - 22/11/23 16:17 - init
+        17:18 - completed
+
+# Exercício 19
+
+    -22/11/23 17:18 - init
+        17:33 - completed
+
+# Exercício 20
+
+    - 22/11/23 17:34 - init (luz caiu)
+    - 23/11/23 14:00 19:00 - in progress
