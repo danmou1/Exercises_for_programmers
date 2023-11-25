@@ -89,3 +89,10 @@
     - 15:10 - init 22
     - 15:45 - 22 completo, sem problemas.
     - 16:06 - 23 completo, sem problemas exceto código feio
+
+# 25/11/2023
+    - 14:00 - init 24
+    - 14:48 - 24 completo, preciso ler sobre regex.
+    - 14:48 - init 25
+    - 15:40 - 25 completo, regex me causou dor
+    
