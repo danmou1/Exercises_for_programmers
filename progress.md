@@ -92,7 +92,7 @@
 
 # 25/11/2023
     - 14:00 - init 24
-    - 14:48 - 24 completo, preciso ler sobre regex.
-    - 14:48 - init 25
-    - 15:40 - 25 completo, regex me causou dor
+    - 14:48 - 24 completo, preciso ler sobre regex, init 25
+    - 15:40 - 25 completo, regex me causou dor, init 26
+    - 16:31 - 26 completo
     
