@@ -95,4 +95,3 @@
     - 14:48 - 24 completo, preciso ler sobre regex, init 25
     - 15:40 - 25 completo, regex me causou dor, init 26
     - 16:31 - 26 completo
-    

@@ -12,7 +12,9 @@ const rl = readline.createInterface({
     input:process.stdin,
     output:process.stdout
 });
+
 const PRECISION = 100
+
 function promptNumber(rl, prompt) {
     return new Promise ((resolve) => {
         rl.question(prompt, (answer) => checkNumber(answer, resolve));
