@@ -34,7 +34,7 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 23: Troubleshooting Car Issues.
 
 ## Functions
-- Exercise 24: Anagraam Checker.
+- Exercise 24: Anagram Checker.
 - Exercise 25: Password Strength Indicator.
 - Exercise 26: Months to Pay Off a Credit Card.
 - Exercise 27: Validating Inputs.
