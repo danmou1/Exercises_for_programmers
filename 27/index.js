@@ -10,8 +10,8 @@
  *  - first and last names must be at least 2 chars long
  *  - zip code must be a number
  *  - employee ID has to follow this format: AA-1234
- *
- * output:
+*
+* output:
 Enter the first name: J
 Enter the last name:
 Enter the ZIP code: ABCDE
@@ -20,16 +20,12 @@ Enter an employee ID: A12-1234
 The last name must be filled in.
 The ZIP code must be numeric.
 A12-1234 is not a valid ID.
- */
+*/
 const readline = require('readline');
-let rl;
-
-function initializeReadline() {
-    rl = readline.createInterface({
-        input:process.stdin,
-        output:process.stdout
-    });
-};
+const rl = readline.createInterface({
+    input:process.stdin,
+    output:process.stdout
+});
 
 function getUserInput(rl, prompt) {
     return new Promise ((resolve) => {
@@ -37,107 +33,70 @@ function getUserInput(rl, prompt) {
     });
 ;}
 
-function validateInput(firstName, lastName, zipCode, employeeID) {
-    let results = [];
+class UserInfo {
+    constructor(firstName, lastName, zipCode, employeeID) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.zipCode = zipCode;
+        this.employeeID = employeeID;
+    }
 
-    if(/^[A-Za-zÀ-ú]+$/.test(firstName) && firstName.length > 2) {
-        results.push(0);
-    } else if (firstName.length <= 2) {
-        results.push(1);
-    } else if (!firstName) {
-        results.push(2);
-    } else {
-        results.push(3);
-    };
-
-    if(/^[A-Za-zÀ-ú]+$/.test(lastName) && lastName.length > 2) {
-        results.push(0);
-    } else if (lastName.length <= 2) {
-        results.push(1);
-    } else if (!lastName) {
-        results.push(2)
-    } else {
-        results.push(3);
-    };
-
-    if(!isNaN(zipCode) && zipCode.length === 5) {
-        results.push(0);
-    } else if (zipCode.length !== 5) {
-        results.push(1);
-    } else {
-        results.push(2)
-    };
-
-    if(/^[A-Z]{2}-\d{4}$/.test(employeeID)) {
-        results.push(0);
-    } else {
-        results.push(1)
-    };
-
-    return results;
-};
-
-function handleText(results, userInput) {
-
-    //error messages
-    switch (results[0]) {
-        case 1:
-            console.log(`"${userInput[0]}" is not a valid first name. It is too short.`);
-            break;
-        case 2:
-            console.log(`The first name must be filled in.`);
-            break;
-        case 3:
-            console.log(`"${userInput[0]}" is not a valid first name. It contains characters that aren't supported.`);
+    validateName(name, fieldname) {
+        if (/^[A-Za-zÀ-ú]+$/.test(name) && name.length > 2) {
+            return;
+        } else if (!name) {
+            return `The ${fieldname} must be filled in.`;
+        } else {
+            return `"${name}" is not a valid ${fieldname}. It is too short.`;
         };
-    switch (results[1]) {
-        case 1:
-            console.log(`"${userInput[1]}" is not a valid last name. It is too short.`);
-            break;
-        case 2:
-            console.log(`The last name must be filled in.`);
-            break;
-        case 3:
-            console.log(`"${userInput[1]}" is not a valid last name, it contains character that aren't supported.`);
-            break;
-    };
-    switch (results[2]) {
-        case 1:
-            console.log(`"${userInput[2]}" is not a valid ZIP code. It must be five characters long.`);
-            break;
-        case 2:
-            console.log(`"${userInput[2]}" is not a valid ZIP code. It must be a number.`);
-            break;
-    };
-    switch (results[3]) {
-        case 1:
-            console.log(`"${userInput[3]}" is an invalid employee ID.`);
-            break;
     };
 
-    if (results.every(value => value === 0) && results.length > 0) {
-        console.log('There were no errors found.');
+    validateZipCode(zipCode) {
+        if (!isNaN(zipCode) && zipCode.length === 5) {
+            return;
+        } else {
+            return 'The ZIP Code must be numeric and have a length of 5.';
+        };
+    };
+
+    validateEmployeeID(employeeID) {
+        if (/^[A-Z]{2}-\d{4}$/.test(employeeID)) {
+            return;
+        } else {
+            return `"${employeeID}" is not a valid ID.`;
+        };
+    };
+
+    validateInput() {
+        const errors = [];
+
+        errors.push(this.validateName(this.firstName, 'first name'));
+        errors.push(this.validateName(this.lastName, 'last name'));
+        errors.push(this.validateZipCode(this.zipCode));
+        errors.push(this.validateEmployeeID(this.employeeID));
+
+        return errors.filter((error) => error !== undefined);
+    }
+}
+
+const main = async() => {
+    const firstName = await getUserInput(rl, 'Enter the first name: ');
+    const lastName = await getUserInput(rl, 'Enter the last name: ');
+    const zipCode = await getUserInput(rl, 'Enter the ZIP code: ');
+    const employeeID = await getUserInput(rl, 'Enter the employee ID: ');
+
+    const userInfo = new UserInfo(firstName, lastName, zipCode, employeeID);
+    const errors = userInfo.validateInput();
+
+    if (errors.length === 0) {
         rl.close();
     } else {
-        console.log('There were errors found, please try again.');
-        rl.close();
-        main();
+        errors.forEach((error) => console.log(error));
+
+        //recursion
+        console.log('\nErrors were found. Please correct them and try again.\n');
+        await main();
     };
-};
-
-async function main() {
-    initializeReadline();
-
-    const userInput = [
-        await getUserInput(rl, 'Insert the first name: '),
-        await getUserInput(rl, 'Insert the last name: '),
-        await getUserInput(rl, 'Insert the ZIP code: '),
-        await getUserInput(rl, 'Insert the employee ID: '),
-    ];
-
-    const results = validateInput(userInput[0], userInput[1], userInput[2], userInput[3]);
-
-    handleText(results, userInput);
 };
 
 main();
