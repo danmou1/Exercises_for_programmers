@@ -96,3 +96,7 @@
     - 15:40 - 25 completo, regex me causou dor, init 26
     - 16:31 - 26 completo, init 27
     - 18:49 - 27 completo
+
+# 26/11/2023
+    - ~18:30 - refactoring 27 (não contei o horário de início, porque é domingo)
+    - 20:00 - finished refactoring
