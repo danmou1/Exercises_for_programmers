@@ -1,2 +1,2 @@
 # Pending Challenges
-- 1. 
+- 2. 2
