@@ -103,4 +103,4 @@
 
 # 27/11/2023 refactoring day
     - 14:00 - init
-    - 14:35 - 1's challenges completed, init 2
+    - 14:35 - 1's challenges completed
