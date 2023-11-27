@@ -100,3 +100,6 @@
 # 26/11/2023
     - ~18:30 - refactoring 27 (não contei o horário de início, porque é domingo)
     - 20:00 - finished refactoring
+
+# 27/11/2023 refactoring day 
+    - 14:
