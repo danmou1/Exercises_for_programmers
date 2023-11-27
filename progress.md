@@ -103,4 +103,4 @@
 
 # 27/11/2023 refactoring day
     - 14:00 - init
-    - 14:35 - 1's challenges completed
+    - 17:28 - brinquei com keypresses e fiquei insano, refactor em alguns exercícios, completei alguns challenges.
