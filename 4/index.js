@@ -1,32 +1,59 @@
-'use strict'
-//read four string inputs from the user and then create a string from it
-
-//use a single output statement
-//string interpolation is allowed
-
+const { resolve } = require('path');
 const readline = require('readline');
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+    input:process.stdin,
+    output:process.stdout
 });
 
-function askQuestion(rl, prompt) {
-    return new Promise((resolve) => {
-        rl.question(prompt, resolve)
-    });
-}
+rl.on("close", () => process.exit(0));
 
-async function madLib() {
-    const noun = await askQuestion(rl, 'Enter a noun: ');
-    const verb = await askQuestion(rl, 'Enter a verb: ');
-    const adjective = await askQuestion(rl, 'Enter an adjective: ');
-    const adverb = await askQuestion(rl, 'Enter an adverb: ');
-    const adverb2 = await askQuestion(rl, 'Now, for the second sentence, enter an adverb: ');
-    const adjective2 = await askQuestion(rl, 'Enter an adjective: ');
+const prompt = (choices) => new Promise((resolve) => {
+    rl.question('', (answer) => checkChoice(choices, answer, resolve))
+});
 
-    console.log(`Did you ${adjective} ${noun} ${verb} ${adverb}? That is ${adverb2} ${adjective2}!`);
+const checkChoice = (choices, answer, resolve) => {
+    if (choices.includes(answer)) {
+        resolve(answer);
+    } else {
+        clearLines(1);
+        prompt(choices).then(resolve);
+    }
+};
+
+const clearLines = (lines) => {
+    rl.output.write('\x1B[1A\x1B[2K'.repeat(lines));
+};
+
+const firstChoice = async () => {
+    console.log(
+        `You wake up in a dark room, you look around and notice two doors, each accordingly numbered. What do you do? \n\n`+
+        `1. Go through the first door.\n`+
+        `2. Go through the second door. \n`+
+        `3. Stay in this room.\n`
+    );
+    let pastChoices = [];
+    let choices = ['1','2','3']
+    let userChoice;
+    do {
+        userChoice = await prompt(choices);
+
+        clearLines(5);
+        switch (userChoice) {
+            case '1':
+                console.log('You chose to go through the first door.');
+                break;
+            case '2':
+                console.log('You chose to go through the second door.');
+                break;
+            case '3':
+                console.log('You chose to stay in this room.');
+                break;
+            default:
+                console.log('Invalid choice. Exiting...');
+            }
+    } while (!choices.includes(userChoice));
+    pastChoices.push(userChoice);
+
     rl.close();
-}
-
-
-madLib();
+};
+firstChoice();
