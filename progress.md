@@ -101,5 +101,6 @@
     - ~18:30 - refactoring 27 (não contei o horário de início, porque é domingo)
     - 20:00 - finished refactoring
 
-# 27/11/2023 refactoring day 
-    - 14:
+# 27/11/2023 refactoring day
+    - 14:00 - init
+    - 14:35 - 1's challenges completed, init 2
