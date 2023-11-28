@@ -113,4 +113,6 @@
     - 14:00 - init 30
     - 14:15 - completed 30
     - 14:16 - init 31
-    - 15:00 - completed 31 (como fazer tables não serem horríveis na saída?);
+    - 15:00 - completed 31, ver como escrever tabelas que não são horríveis de editar no código
+    - 15:01 - init 32
+    - 15:55 - wip 32, codigo feio
