@@ -45,6 +45,8 @@ const main = async () => {
     const result = 72 / returnRate;
 
     console.log(result);
+    
+    rl.close();
 };
 
 main();
