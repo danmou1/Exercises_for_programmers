@@ -38,3 +38,10 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 25: Password Strength Indicator.
 - Exercise 26: Months to Pay Off a Credit Card.
 - Exercise 27: Validating Inputs.
+
+## Repetition
+- Exercise 28: Adding Numbers.
+- Exercise 29: Handling Bad Input.
+- Exercise 30: Multiplication Table.
+- Exercise 31: Karvonen Heart Rate.
+- Exercise 32: Guess the Number Game.

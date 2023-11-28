@@ -1,5 +1,4 @@
 # TODO
-- Organize directories by chapter;
-- Complete exercises;
-- Complete challenges;
+- Complete all exercises;
+- Complete all challenges;
 - Refactor everything after it is done.
