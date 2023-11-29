@@ -118,6 +118,6 @@
     - 15:55 - wip 32, codigo feio
 
 # 29/11/2023
-
     - 14:30 - wip 32
-    - 14:52 - completed 32
+    - 14:52 - completed 32, init 33
+    - 15:!7 - complete 33, init 34
