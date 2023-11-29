@@ -116,3 +116,8 @@
     - 15:00 - completed 31, ver como escrever tabelas que não são horríveis de editar no código
     - 15:01 - init 32
     - 15:55 - wip 32, codigo feio
+
+# 29/11/2023
+
+    - 14:30 - wip 32
+    - 14:52 - completed 32
