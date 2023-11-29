@@ -45,3 +45,7 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 30: Multiplication Table.
 - Exercise 31: Karvonen Heart Rate.
 - Exercise 32: Guess the Number Game.
+
+## Data Structures
+- Exercise 33: Magic 8 Ball.
+- Exercise 34: Employee List Removal.
