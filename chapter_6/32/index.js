@@ -84,26 +84,20 @@ const clearLines = (lines) => {
     rl.output.write('\x1B[1A\x1B[2K'.repeat(lines));
 };
 
-const guessTheNumber = async () => {
-    console.log("Let's play Guess the Number!");
+const getEndMessage = (guessNumber) => {
+    if (guessNumber === 1) {
+        console.log(`You're a mind reader! You got it in ${guessNumber} guess!`);
+    } else if (guessNumber <= 3) {
+        console.log(`Most impressive. You got it in ${guessNumber} guesses.`);
+    } else if (guessNumber <= 6) {
+        console.log(`You got it in ${guessNumber} tries. You can do better than that.`);
+    } else {
+        console.log(`Better luck next time, you guessed ${guessNumber} times.`);
+    }
+};
 
-    const difficulty = await promptDifficulty('Pick a difficulty level (1, 2 or 3): ');
-    const number = await getRandomInt(difficulty);
 
-    let guess = await promptGuess("I have my number. What's your guess? ");
-    let tries = 0;
-    do {
-        if (guess > number) {
-            guess = await promptGuess("Too high. Guess again: ");
-            tries++
-        } else if (guess < number) {
-            guess = await promptGuess("Too low. Guess again: ");
-            tries++
-        }
-    } while (guess !== number)
-
-    console.log(`You got it in ${tries} guesses!`);
-
+const playAgain = () => {
     rl.question('Play again? (y/n) ', (answer) => {
         if (answer.trim() === 'y') {
             guessTheNumber();
@@ -113,7 +107,31 @@ const guessTheNumber = async () => {
             return
         }
     });
+}; 
+
+const guessTheNumber = async () => {
+    const difficulty = await promptDifficulty('Pick a difficulty level (1, 2 or 3): ');
+    const number = getRandomInt(difficulty);
+    
+    let guess = await promptGuess("I have my number. What's your guess? ");
+    let guessNumber = 0;
+
+    do {
+        if (guess > number) {
+            guess = await promptGuess("Too high. Guess again: ");
+            guessNumber++
+        } else if (guess < number) {
+            guess = await promptGuess("Too low. Guess again: ");
+            guessNumber++
+        }
+    } while (guess !== number)
+
+    getEndMessage(guessNumber);
+
+    playAgain();
 };
 
-const main = async () => await guessTheNumber();
+const main = () => {
+    guessTheNumber();
+}
 main();
