@@ -51,3 +51,4 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 34: Employee List Removal.
 - Exercise 35: Picking a Winner.
 - Exercise 36: Computing Statistics.
+- Exercise 37: Password Generator.
