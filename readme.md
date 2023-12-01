@@ -49,3 +49,5 @@ This repo contains my answers for this book, using Javascript.
 ## Data Structures
 - Exercise 33: Magic 8 Ball.
 - Exercise 34: Employee List Removal.
+- Exercise 35: Picking a Winner.
+- Exercise 36: Computing Statistics.

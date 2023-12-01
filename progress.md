@@ -125,4 +125,5 @@
 
 # 30/11/2023
     - 22:00 - wip 35
-    - 22:55 - completed 35, challenges wip;
+    - 22:55 - completed 35, challenges wip, init 36
+    - 00:53 - completed 36
