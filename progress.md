@@ -132,4 +132,7 @@
     - 9:30 - init 37
     - 10:57 - completed 37
     - 10:58 - init 38
-    - 11:33 - completed 38
+    - 11:33 - completed 38, init 39
+    - 11:36 pause
+    - 12:00 resume
+    - 13:03 - completed 39
