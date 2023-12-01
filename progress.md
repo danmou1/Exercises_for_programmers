@@ -122,3 +122,7 @@
     - 14:52 - completed 32, init 33
     - 15:17 - completed 33, init 34
     - 17:17 - completed 34, brinquei um pouco com error handling e por consequência terminei os challenges do 34, init 35
+
+# 30/11/2023
+    - 22:00 - wip 35
+    - 22:55 - completed 35, challenges wip;
