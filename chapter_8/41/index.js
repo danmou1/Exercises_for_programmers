@@ -69,17 +69,28 @@ async function getUserInput() {
     return data
 };
 
+async function printSortedArray() {
+    const data = await dataHandler.readData();
+    const sortedArray = data.sort((a, b) => a.lastname.localeCompare(b.lastname));
+
+    rl.close();
+
+    console.log(
+        `Total of ${sortedArray.length} names\n` +
+        `-----------------`
+        );
+    for (let i = 0; i < sortedArray.length; i++) {
+        console.log(`${sortedArray[i].lastname}, ${sortedArray[i].firstname}`);
+    }
+};
+
 async function main() {
     const willInput = (await prompt("Do you wish to input data to the database? (y/n) ")).trim().toLowerCase();
     if (willInput === 'y') {
         await getUserInput();
     }
 
-    const data = await dataHandler.readData();
-    const dataArray = data.sort((a, b) => a.lastname.localeCompare(b.lastname));
-
-    console.table(dataArray);
-    rl.close();
+    printSortedArray();
 };
 
 main();
