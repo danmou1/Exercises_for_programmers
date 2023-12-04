@@ -139,3 +139,4 @@
 
 # 04/12/2023
     - 15:00 - init 40; aparentemente, na última vez eu tinha completo o exercício 40, ao invés do 39; completed 40;
+    - 15:20 - completed 39;
