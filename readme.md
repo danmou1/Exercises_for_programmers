@@ -54,3 +54,4 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 37: Password Generator.
 - Exercise 38: Filtering Values.
 - Exercise 39: Sorting Records.
+- Exercise 40: Filtering Records.

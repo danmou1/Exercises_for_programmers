@@ -128,7 +128,7 @@
     - 22:55 - completed 35, challenges wip, init 36
     - 00:53 - completed 36
 
-# 01/11/2023
+# 01/12/2023
     - 9:30 - init 37
     - 10:57 - completed 37
     - 10:58 - init 38
@@ -136,3 +136,6 @@
     - 11:36 pause
     - 12:00 resume
     - 13:03 - completed 39
+
+# 04/12/2023
+    - 15:00 - init 40; aparentemente, na última vez eu tinha completo o exercício 40, ao invés do 39; completed 40;
