@@ -1,4 +1,4 @@
-//idk what to do
+//questão desgraçada, seria muito mais fácil usar console.table
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
