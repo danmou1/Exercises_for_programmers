@@ -55,3 +55,7 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 38: Filtering Values.
 - Exercise 39: Sorting Records.
 - Exercise 40: Filtering Records.
+
+## Working with Files
+- Exercise 41: Name Sorter.
+- Exercise 42: Parsing a Data File.
