@@ -59,3 +59,4 @@ This repo contains my answers for this book, using Javascript.
 ## Working with Files
 - Exercise 41: Name Sorter.
 - Exercise 42: Parsing a Data File.
+- Exercise 43: Website Generator.
