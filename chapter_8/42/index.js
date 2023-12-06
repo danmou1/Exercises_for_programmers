@@ -39,8 +39,6 @@ readStream.on('line', (line) => {
 });
 
 function formatTable(data, properties, longestResults) {
-    const columnWidths = properties.map((property) => longestResults[property].length);
-
     const headers = ['Last', 'First', 'Salary'];
 
     //print headers, this works and I don't know how
