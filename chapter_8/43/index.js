@@ -19,47 +19,61 @@ const rl = readline.createInterface({
     output:process.stdout
 });
 
-const prompt = (message) => new Promise ((resolve) => rl.question(message, (answer) => resolve(answer.trim())));
+const prompt = (promptMessage) => new Promise ((resolve) => rl.question(promptMessage, (answer) => resolve(answer.trim())));
 
-async function getUserInput() {
-    let titleName;
-    let formattedName;
+const clearLines = (lines) => {
+    rl.output.write('\x1B[1A\x1B[2K'.repeat(lines));
+};
 
-    while (true) {
-        titleName = await prompt('Site name:\n');
-        formattedName = titleName.toLowerCase().replace(' ', '-');
+
+async function promptTitle(promptMessage) {
+    const validateInput = (input) => /^[A-Za-z0-9\s]+$/.test(input);
+    let userInput = '';
+    
+    while (!validateInput(userInput)) {
+        userInput = await prompt(`${promptMessage}`);
         
-        if (/^[A-Za-z0-9 ]+$/.test(titleName)) {
-            break;
-        } else {
-            console.log('Invalid input. Please only use alphanumeric characters.')
+        if (!validateInput(userInput)) {
+            clearLines(3);
+            console.log('Invalid input. Please enter only alphanumeric characters.')
         }
-    }
-
-    let author = await prompt('Author:\n');
-
-    //this works, but I don't like how it looks
-    //yes or no validation, regex seems like the best choice for these scenarios
-    //I can make constants nested in the if statements, but this seems slightly more understandable, though it also seems unsafe
-    let createJSFolder;
-    let createCSSFolder;
-
-    while (true) {
-        createJSFolder = await prompt('Do you want a folder for Javascript?\n[Yes or No]: ');
-        
-        if (/^(y|n|yes|no)$/i.test(createJSFolder.toLowerCase())) {
-            createCSSFolder = await prompt('Do you want a folder for CSS?\n[Yes or No]: ');
-
-            if (/^(y|n|yes|no)$/i.test(createCSSFolder)) {
-                break;
-            };
-
-            console.log('Invalid input. Please answer either yes or no.');
-        };
-        console.log('Invalid input. Please answer either yes or no.');
     };
-
-    rl.close();
+    
+    return userInput;
 };
 
 getUserInput();
+
+async function promptYN(promptMessage) {
+    const validateInput = (input) => /^(y|n|yes|no)$/i.test(input);
+    let userInput = false;
+    
+    while (!validateInput(userInput)) {
+        userInput = await prompt(`${promptMessage}`);
+        
+        if (!validateInput(userInput)) {
+            clearLines(3);
+            console.log('Invalid input. Please enter only yes or no.');
+        }
+    }
+    
+    if (/^(y|yes)$/i.test(userInput)) {
+        return true;
+    }
+    if (/^(n|no)$/i.test(userInput)) {
+        return false
+    }
+};
+
+async function getUserInput() {
+    const titleName = await promptTitle('Name of the site:\n');
+    const formattedName = titleName.toLowerCase().replace(/\s/g, '-');
+
+    const author = await prompt('Author:\n');
+
+    const createJSDir = await promptYN('Do you want a folder for JavaScript?\n[Yes or No]: ');
+    const createCSSDir = await promptYN('Do you want a folder for CSS?\n[Yes or No]: ');
+
+    console.log(titleName, formattedName, author, createJSDir, createCSSDir);
+    rl.close();
+};
