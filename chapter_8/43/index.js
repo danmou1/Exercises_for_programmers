@@ -42,8 +42,6 @@ async function promptTitle(promptMessage) {
     return userInput;
 };
 
-getUserInput();
-
 async function promptYN(promptMessage) {
     const validateInput = (input) => /^(y|n|yes|no)$/i.test(input);
     let userInput = false;
@@ -77,3 +75,5 @@ async function getUserInput() {
     console.log(titleName, formattedName, author, createJSDir, createCSSDir);
     rl.close();
 };
+
+getUserInput();
