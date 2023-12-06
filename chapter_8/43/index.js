@@ -13,7 +13,6 @@ const readline = require('readline');
 const fs = require('fs').promises;
 const path = require('path');
 
-const filePath = __dirname;
 const rl = readline.createInterface({
     input:process.stdin,
     output:process.stdout
@@ -64,16 +63,69 @@ async function promptYN(promptMessage) {
 };
 
 async function getUserInput() {
-    const titleName = await promptTitle('Name of the site:\n');
-    const formattedName = titleName.toLowerCase().replace(/\s/g, '-');
+    const userInput = {
+        titleName: await promptTitle('Name of the site:\n'),
+        author: await prompt('Author:\n'),
+        createJSDir: await promptYN('Do you want a folder for JavaScript?\n[Yes or No]: '),
+        createCSSDir: await promptYN('Do you want a folder for CSS?\n[Yes or No]: '),
+    };
 
-    const author = await prompt('Author:\n');
+    userInput.directoryName = userInput.titleName.toLowerCase().replace(/\s/g, '-');
 
-    const createJSDir = await promptYN('Do you want a folder for JavaScript?\n[Yes or No]: ');
-    const createCSSDir = await promptYN('Do you want a folder for CSS?\n[Yes or No]: ');
-
-    console.log(titleName, formattedName, author, createJSDir, createCSSDir);
     rl.close();
+
+    return userInput;
 };
 
-getUserInput();
+async function createDirectory(name) {
+    try {
+        const directoryPath = path.join(__dirname, name);
+
+        await fs.mkdir(directoryPath, {recursive: false});
+
+        console.log(`Created ${name}`);
+    } catch (err) {
+        console.error(`Error:`, err);
+    }
+};
+
+//creates an html file based on a template
+async function writeFromTemplate(titleName, author, directoryName) {
+    try {
+        const templatePath = path.join(__dirname, 'templates/index.html');
+
+        const templateContent = await fs.readFile(templatePath, 'utf8');
+        
+        //content to write
+        const updatedContent = (templateContent
+            .replace(`{{title}}`, titleName)
+            .replace(`{{author}}`, author)
+        );
+        
+        const fileName = 'index.html'
+        const outputFile = path.join(__dirname, directoryName, fileName);
+
+        await fs.writeFile(outputFile, updatedContent, 'utf8');
+
+        console.log(`Created ${path.join(directoryName, fileName)}`);
+    } catch (err) {
+        console.error('Error:', err);
+    }
+};
+
+async function main() {
+    const d = await getUserInput();
+
+    await createDirectory(d.directoryName);
+    await writeFromTemplate(d.titleName, d.author, d.directoryName);
+
+    if (d.createJSDir === true) {
+        await createDirectory(`${d.directoryName}\\js\\`);
+    }
+
+    if (d.createCSSDir === true) {
+        await createDirectory(`${d.directoryName}\\css\\`);
+    }
+};
+
+main();
