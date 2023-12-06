@@ -21,3 +21,45 @@ const rl = readline.createInterface({
 
 const prompt = (message) => new Promise ((resolve) => rl.question(message, (answer) => resolve(answer.trim())));
 
+async function getUserInput() {
+    let titleName;
+    let formattedName;
+
+    while (true) {
+        titleName = await prompt('Site name:\n');
+        formattedName = titleName.toLowerCase().replace(' ', '-');
+        
+        if (/^[A-Za-z0-9 ]+$/.test(titleName)) {
+            break;
+        } else {
+            console.log('Invalid input. Please only use alphanumeric characters.')
+        }
+    }
+
+    let author = await prompt('Author:\n');
+
+    //this works, but I don't like how it looks
+    //yes or no validation, regex seems like the best choice for these scenarios
+    //I can make constants nested in the if statements, but this seems slightly more understandable, though it also seems unsafe
+    let createJSFolder;
+    let createCSSFolder;
+
+    while (true) {
+        createJSFolder = await prompt('Do you want a folder for Javascript?\n[Yes or No]: ');
+        
+        if (/^(y|n|yes|no)$/i.test(createJSFolder.toLowerCase())) {
+            createCSSFolder = await prompt('Do you want a folder for CSS?\n[Yes or No]: ');
+
+            if (/^(y|n|yes|no)$/i.test(createCSSFolder)) {
+                break;
+            };
+
+            console.log('Invalid input. Please answer either yes or no.');
+        };
+        console.log('Invalid input. Please answer either yes or no.');
+    };
+
+    rl.close();
+};
+
+getUserInput();
