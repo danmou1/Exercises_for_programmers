@@ -80,7 +80,7 @@ async function getUserInput() {
 async function createDirectory(name) {
     try {
         const directoryPath = path.join(__dirname, name);
-
+        console.log(directoryPath);
         await fs.mkdir(directoryPath, {recursive: false});
 
         console.log(`Created ${name}`);
@@ -120,11 +120,13 @@ async function main() {
     await writeFromTemplate(d.titleName, d.author, d.directoryName);
 
     if (d.createJSDir === true) {
-        await createDirectory(`${d.directoryName}\\js\\`);
+        let directory = path.join(d.directoryName, 'js');
+        await createDirectory(directory);
     }
 
     if (d.createCSSDir === true) {
-        await createDirectory(`${d.directoryName}\\css\\`);
+        let directory = path.join(d.directoryName, 'css');
+        await createDirectory(directory);
     }
 };
 
