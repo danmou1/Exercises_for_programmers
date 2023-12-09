@@ -16,3 +16,4 @@
 - 44. 2;
 - 45. 1,2;
 - 46. 1, 3; idk if I optimized it enough, but it runs almost instantly so ig challenge 2 isn't needed
+- 47. 1,2; console.table kinda trivializes the whole need for the first challenge, but I'll think about this later.

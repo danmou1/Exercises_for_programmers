@@ -63,3 +63,6 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 44: Product Search.
 - Exercise 45: Word Finder.
 - Exercise 46: Word Frequency Finder.
+
+## Working with External Services
+- Exercise 47: Who's in Space?
