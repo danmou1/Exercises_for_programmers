@@ -3,6 +3,7 @@
 [Buy Bryan Hogan's book here.](https://www.amazon.com.br/Exercises-Programmers-Brian-Hogan/dp/1680501224)
 
 This repo contains my answers for this book, using Javascript.
+Everything is still WIP, and so I may change past answers anytime.
 
 ## Input, Processing and Output
 - Exercise 1: Saying Hello.
