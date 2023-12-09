@@ -10,7 +10,6 @@ const prompt = (promptMessage) => new Promise((resolve) => rl.question(promptMes
 
 const limit = 5
 const location = await prompt("Where are you:\n");
-const keyAPI = "3ce474a7ee59fd9518135902697213d6";
 
 const { hostname, pathname} = new URL (`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=${limit}&appid=${keyAPI}`)
 
