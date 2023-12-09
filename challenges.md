@@ -10,8 +10,9 @@
 - 38. 1;
 - 39. 1, 2;
 - 40. 2, 3;
-- 41. 1, 2, 3; 
+- 41. 1, 2, 3;
 - 42. 1, 2, 3;
 - 43. 1, 2;
 - 44. 2;
 - 45. 1,2;
+- 46. 1, 3; idk if I optimized it enough, but it runs almost instantly so ig challenge 2 isn't needed

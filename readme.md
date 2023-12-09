@@ -62,3 +62,4 @@ This repo contains my answers for this book, using Javascript.
 - Exercise 43: Website Generator.
 - Exercise 44: Product Search.
 - Exercise 45: Word Finder.
+- Exercise 46: Word Frequency Finder.
