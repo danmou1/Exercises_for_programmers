@@ -1,33 +1,24 @@
-import makeApiCall from "./apiCaller.mjs";
-import readline from "readline";
+import makeApiCall from "./apiCaller.mjs"
+import { prompt, close } from "./prompt.mjs";
+import './env.mjs'
 
-const rl = readline.createInterface({
-    input:process.stdin,
-    output:process.stdout,
-});
+const limit = 5;
 
-const prompt = (promptMessage) => new Promise((resolve) => rl.question(promptMessage, (answer) => resolve(answer.trim())));
+async function fetchData() {
+    try {
+        const location = await prompt("Where are you:\n");
+        const API_Key = process.env.WEATHER_API_KEY;
+        const url = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=${limit}&appid=${API_Key}`;
 
-const limit = 5
-const location = await prompt("Where are you:\n");
+        console.log(url);
+        const data = await makeApiCall(url);
 
-const { hostname, pathname} = new URL (`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=${limit}&appid=${keyAPI}`)
-
-const apiOptions = {
-    hostname,
-    path: pathname,
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json',
-    },
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    } finally {
+        close();
+    }
 };
 
-makeApiCall(apiOptions)
-    .then((data) => {
-        rl.close();
-        console.log(data);
-    })
-    .catch((error) => {
-        rl.close();
-        console.error(error);
-    });
+fetchData();

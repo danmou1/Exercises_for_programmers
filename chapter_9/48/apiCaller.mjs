@@ -1,6 +1,17 @@
 import https from 'https';
 
-const makeApiCall = (options) => {
+const makeApiCall = (url) => {
+    const { hostname, pathname } = new URL(url);
+
+    const options = {
+        hostname,
+        path: pathname,
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+
     return new Promise((resolve, reject) => {
         const req = https.request(options, (res) => {
             let data = '';
@@ -18,8 +29,14 @@ const makeApiCall = (options) => {
             reject(`Error making the request: ${err.message}`);
         });
 
+        req.setTimeout(10000, () => {
+            req.abort();
+            reject('Request timed out');
+        });
+
         req.end();
     });
 };
+
 
 export default makeApiCall;
