@@ -164,3 +164,6 @@
     - 00:04 - completed 46, init 47
     - 01:25 - completed 47, init 48
     - 02:24 - 48 wip, apparently I need to wait for my API key to be activated, therefore I will simply sleep
+
+# 09/12/2023
+    - sporadic troubleshooting for 48, still wip
