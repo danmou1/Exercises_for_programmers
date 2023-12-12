@@ -1,15 +1,13 @@
 import https from 'https';
 
 const makeApiCall = (url) => {
-    const { hostname, pathname } = new URL(url);
+    const { hostname, pathname, search } = new URL(url);
 
     const options = {
         hostname,
-        path: pathname,
+        path: `${pathname}${search}`,
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        headers: {'Content-Type': 'application/json'},
     };
 
     return new Promise((resolve, reject) => {
@@ -30,13 +28,12 @@ const makeApiCall = (url) => {
         });
 
         req.setTimeout(10000, () => {
-            req.abort();
+            req.destroy();
             reject('Request timed out');
         });
 
         req.end();
     });
 };
-
 
 export default makeApiCall;
