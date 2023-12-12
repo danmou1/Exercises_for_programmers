@@ -172,3 +172,7 @@
     - 19:00 - 48 wip
     - 21:45 - 48 complete
     - 21:45 - 49 init
+
+# 12/12/2023
+    - 14:00 - 49 wip
+    - 17:41 - 49 wip, clueless but somehow got some progress
