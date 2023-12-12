@@ -67,3 +67,4 @@ Everything is still WIP, and so I may change past answers anytime.
 
 ## Working with External Services
 - Exercise 47: Who's in Space?
+- Exercise 48: Grabbing the Weather.

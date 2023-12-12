@@ -167,3 +167,8 @@
 
 # 09/12/2023
     - sporadic troubleshooting for 48, still wip
+
+# 11/12/2023
+    - 19:00 - 48 wip
+    - 21:45 - 48 complete
+    - 21:45 - 49 wip
