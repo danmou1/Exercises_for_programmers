@@ -176,3 +176,7 @@
 # 12/12/2023
     - 14:00 - 49 wip
     - 17:41 - 49 wip, clueless but somehow got some progress
+
+# 13/12/2023
+    - 13:30 - 49 wip
+    - 17:22 - 49 wip
