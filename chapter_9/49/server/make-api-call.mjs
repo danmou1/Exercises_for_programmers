@@ -2,10 +2,11 @@ import http from 'http';
 
 
 const makeApiCall = (searchTerm) => {
-    const apiUrl = `https://www.flickr.com/services/feeds/photos_public.gne?format=json&tags=${encodeURIComponent(searchTerm)}`
-
+    const apiUrl = `http://www.flickr.com/services/feeds/photos_public.gne?format=json&tags=${encodeURIComponent(searchTerm)}`
+    
+    console.log(`Calling: ${apiUrl}`);
     return new Promise((resolve, reject) => {
-        http.get(apiUrl, (apiRes) => {
+        const req = http.get(apiUrl, (apiRes) => {
             let data = '';
 
             apiRes.on('data', (chunk) => {
@@ -13,14 +14,13 @@ const makeApiCall = (searchTerm) => {
             });
 
             apiRes.on('end', () => {
-                try {
-                    const apiData = JSON.parse(data);
-                    resolve(apiData);
-                } catch(error) {
-                    reject(error);
-                }
-            });
-        }).on('error', (error) => reject(error))
+                console.log('API Response:', data)
+                resolve(data);
+            })
+        });
+        
+        req.on('error', (error) => reject(error));
+        req.end();
     });
 };
 

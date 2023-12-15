@@ -1,16 +1,33 @@
-import http from 'http'
+import http from 'http';
 import url from 'url';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 import makeApiCall from './make-api-call.mjs';
 
 const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true);
 
-    if (parsedUrl.pathname === '/api/data' && req.method === 'GET') {
-        const searchTerm = parsedUrl.query.searchTerm || 'default';
-        const responseData = { message: `Data for ${searchTerm}` };
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(responseData));
+    if (parsedUrl.pathname === '/api/data' && req.method === 'GET') {
+        const searchTerm = parsedUrl.query.tags || 'default';
+
+        makeApiCall(searchTerm)
+            .then(apiData => {
+            const jsonData = JSON.stringify(apiData, null, 2);
+            const mediaLinks = jsonData.items.map(item => item.media.m);
+            const jsonResponse = JSON.stringify(mediaLinks);
+
+            res.writeHead(200, { 'Content-Type': 'application/json'});
+            res.end(jsonResponse);
+            })
+            .catch(error => {
+                console.error('Error in calling the API', error);
+                res.writeHead(error.statusCode || 500, { 'Content-Type': 'application/json'})
+                res.end(JSON.stringify({ error: 'Internal Server Error'}))
+            });
     } else {
         const filePath = join(__dirname, 'public', parsedUrl.pathname);
         readFile(filePath, (err, data) => {
