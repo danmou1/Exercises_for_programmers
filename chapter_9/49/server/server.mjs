@@ -1,49 +1,65 @@
-import http from 'http';
-import url from 'url';
-import { readFile } from 'fs/promises';
-import { join } from 'path';
-import makeApiCall from './make-api-call.mjs';
+import http from "node:http";
+import querystring from "node:querystring"
+import { callExternalAPI } from "./api-caller.mjs";
 
-const server = http.createServer((req, res) => {
-    const parsedUrl = url.parse(req.url, true);
 
+const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 
-    if (parsedUrl.pathname === '/api/data' && req.method === 'GET') {
-        const searchTerm = parsedUrl.query.tags || 'default';
+    const parsedUrl = new URL (`http://localhost${req.url}`);
 
-        makeApiCall(searchTerm)
-            .then(apiData => {
-            const jsonData = JSON.stringify(apiData, null, 2);
-            const mediaLinks = jsonData.items.map(item => item.media.m);
-            const jsonResponse = JSON.stringify(mediaLinks);
+    if(parsedUrl.pathname === "/search") {
+        const queryParams = querystring.parse(parsedUrl.search.slice(1));
+        const query = queryParams.q;
+        const mediaLinks = await getMediaLinks(query);
 
-            res.writeHead(200, { 'Content-Type': 'application/json'});
-            res.end(jsonResponse);
-            })
-            .catch(error => {
-                console.error('Error in calling the API', error);
-                res.writeHead(error.statusCode || 500, { 'Content-Type': 'application/json'})
-                res.end(JSON.stringify({ error: 'Internal Server Error'}))
-            });
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify(mediaLinks));
     } else {
-        const filePath = join(__dirname, 'public', parsedUrl.pathname);
-        readFile(filePath, (err, data) => {
-            if (err) {
-                res.writeHead(404, { 'Content-Type': 'text/plain' });
-                res.end('404 Not Found');
-            } else {
-                res.writeHead(200, { 'Content-Type': 'text/plain' });
-                res.end(data);
-            }
-        })
+        switch (req.url) {
+            case "/":
+                res.writeHead(200, { "Content-Type": "text/plain" });
+                res.end("Home page");
+                break;
+
+            case "/api/data":
+                try {
+                    const mediaLinks = await getMediaLinks('nature');
+                    res.writeHead(200, { "Content-Type": "application/json" });
+                    res.end(JSON.stringify(mediaLinks));
+                    break;
+                } catch (error) {
+                    console.error('Error fetching data media lnks:', error);
+                    res.writeHead(500);
+                    res.end('Internal Server Error');
+                }
+                break;
+
+            case "/about":
+                res.writeHead(200, { "Content-Type": "text/plain" });
+                res.end("About page");
+                break;
+
+            default:
+                res.writeHead(404)
+                res.end("Page not found");
+        };
     }
+})
+
+const PORT = 3000;
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
 
-const port = process.env.PORT || 3000;
-
-server.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});
+async function getMediaLinks(query) {
+    try {
+        const jsonData = await callExternalAPI(query);
+        const mediaLinks = jsonData.items.map(item => item.media.m);
+        return mediaLinks;
+    } catch (error) {
+        console.error('Error fetching or processing data:', error);
+        return [];
+    }
+};
