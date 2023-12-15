@@ -184,3 +184,7 @@
 # 14/12/2023
     - 18:30 - 49 wip
     - 21:47 - 49 wip (genuinely confused)
+
+# 15/12/2023
+    - 17:00 - 49 wip, finalmente progresso tangível
+    - 20:36 - 49 wip, back end done
