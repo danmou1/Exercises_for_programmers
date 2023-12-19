@@ -68,3 +68,5 @@ Everything is still WIP, and so I may change past answers anytime.
 ## Working with External Services
 - Exercise 47: Who's in Space?
 - Exercise 48: Grabbing the Weather.
+- Exercise 49: Flickr Photo Search.
+- Exercise 50: Movie Recommendations -- Impossible due to the discontinuation of Rotten Tomatoes' free API.
