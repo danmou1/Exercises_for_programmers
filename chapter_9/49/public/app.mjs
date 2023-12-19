@@ -40,19 +40,25 @@ const displayImages = async () => {
     const resultsContainer = document.getElementById('resultsContainer');
     resultsContainer.innerHTML = '';
 
-    const textContainer = document.createElement('div');
-    
-    const textElement = document.createElement('p');
-    textElement.textContent = `Images about "${query}":`;
-    textElement.classList.add('text-element');
-    textContainer.appendChild(textElement);
-    
-    const lineBreak = document.createElement('br');
-    textContainer.appendChild(lineBreak);
-    
-    const searchButton = document.querySelector('#searchForm button');
-    searchButton.parentNode.insertBefore(textContainer, searchButton.nextSibling);
-    
+    let textContainer = document.querySelector('.text-element');
+
+    if (!textContainer) {
+        const textContainer = document.createElement('div');
+        
+        const textElement = document.createElement('p');
+        textElement.textContent = `Images about "${query}":`;
+        textElement.classList.add('text-element');
+        textContainer.appendChild(textElement);
+        
+        const lineBreak = document.createElement('br');
+        textContainer.appendChild(lineBreak);
+        
+        const searchButton = document.querySelector('#searchForm button');
+        searchButton.parentNode.insertBefore(textContainer, searchButton.nextSibling);
+    } else {
+        textContainer.firstChild.textContent = `Images about "${query}"`;
+    }
+
     const data = await fetchData(query);
     addImagesToContainer(data, resultsContainer);
 };
