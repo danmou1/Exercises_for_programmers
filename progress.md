@@ -192,3 +192,7 @@
 # 18/12/2023
     - 21:00 - 49 wip, front end
     - 00:27 - 49 wip, browser javascript is weird, have yet to fix the issue of continuous searches printing more text, probably gonna watch a tutorial for this, because I am overcomplicating stuff.
+
+# 19/12/2023
+    - 17:00 - 49 wip, just have to fix a minor bug
+    - 17:07 - 49 complete, I'm gonna start 50, but I'm not going too deep into challenges because we have yet to choose a js framework
