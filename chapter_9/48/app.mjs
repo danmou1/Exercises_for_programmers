@@ -1,4 +1,4 @@
-import makeApiCall from "./makeApiCall.mjs"
+import makeApiCall from "./make-api-call.mjs"
 import { prompt, close } from "./prompt.mjs";
 import './env.mjs'
 
