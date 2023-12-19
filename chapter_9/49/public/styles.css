@@ -1,0 +1,13 @@
+#resultsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.text-element {
+    margin-bottom: 5px;
+}
+
+.image-item {
+    margin-bottom: 10px;
+}
