@@ -188,3 +188,7 @@
 # 15/12/2023
     - 17:00 - 49 wip, finalmente progresso tangível
     - 20:36 - 49 wip, back end done
+
+# 18/12/2023
+    - 21:00 - 49 wip, front end
+    - 00:27 - 49 wip, browser javascript is weird, have yet to fix the issue of continuous searches printing more text, probably gonna watch a tutorial for this, because I am overcomplicating stuff.
