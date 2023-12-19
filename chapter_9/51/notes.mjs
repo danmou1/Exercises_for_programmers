@@ -1,7 +1,10 @@
 import * as fs from 'fs/promises';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const fileName = 'notes.md';
+const fileName = __dirname + '\\notes.md'
 
 async function newNote(note) {
     const currentDate = new Date().toISOString();
