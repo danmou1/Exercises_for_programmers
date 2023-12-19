@@ -195,4 +195,5 @@
 
 # 19/12/2023
     - 17:00 - 49 wip, just have to fix a minor bug
-    - 17:07 - 49 complete, I'm gonna start 50, but I'm not going too deep into challenges because we have yet to choose a js framework
+    - 17:07 - 49 complete, init 50, but I'm not going too deep into challenges because we have yet to choose a js framework
+    - 17:50 - 50 deprecated, rotten tomatoes's free API is dead, init
