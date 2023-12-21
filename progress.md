@@ -198,3 +198,6 @@
     - 17:07 - 49 complete, init 50, but I'm not going too deep into challenges because we have yet to choose a js framework
     - 17:50 - 50 deprecated, rotten tomatoes's free API is dead, init 51
     - 20:26 - 51 wip, note taking app done, just need to push the data to the database.
+
+# 20/12/2023
+    - 23:30 - 51 wip;
