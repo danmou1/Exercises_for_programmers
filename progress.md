@@ -200,4 +200,4 @@
     - 20:26 - 51 wip, note taking app done, just need to push the data to the database.
 
 # 20/12/2023
-    - 23:30 - 51 wip;
+    - 23:30 - 51 wip, reading firestore documentation
