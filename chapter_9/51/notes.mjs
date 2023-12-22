@@ -64,7 +64,7 @@ async function readNote(noteId) {
         if (error.code === 'ENOENT') {
             console.log('No notes found.');
         } else {
-            console.error('Unable to read note:', err);
+            console.error('Unable to read note:', error);
         }
     }
 };
